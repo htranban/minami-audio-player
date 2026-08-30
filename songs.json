@@ -22,37 +22,37 @@
   },
   {
     "id": 4,
-    "title": "Bad Boy Bigbang",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "BAD BOY",
+    "artist": "BIGBANG",
+    "genre": "KPOP",
     "src": "bad_boy_bigbang.m4a"
   },
   {
     "id": 5,
-    "title": "Bae Bae",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "BAE BAE",
+    "artist": "BIGBANG",
+    "genre": "KPOP",
     "src": "bae_bae.m4a"
   },
   {
     "id": 6,
-    "title": "Bang Bang Bang",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "BANG BANG BANG",
+    "artist": "BIGBANG",
+    "genre": "KPOP",
     "src": "bang_bang_bang.m4a"
   },
   {
     "id": 7,
-    "title": "Beo Dat May Troi",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "Bèo Dạt Mây Trôi",
+    "artist": "Quan Họ Bắc Ninh",
+    "genre": "QUAN HO",
     "src": "beo_dat_may_troi.m4a"
   },
   {
     "id": 8,
-    "title": "Blue Bigbang",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "BLUE",
+    "artist": "BIGBANG",
+    "genre": "KPOP",
     "src": "blue_bigbang.m4a"
   },
   {
@@ -71,8 +71,8 @@
   },
   {
     "id": 11,
-    "title": "Cang Niu Giu Cang De Mat",
-    "artist": "VPOP Artist",
+    "title": "Càng Níu Giữ Càng Dễ Mất",
+    "artist": "Mr. Siro",
     "genre": "VPOP",
     "src": "cang_niu_giu_cang_de_mat.m4a"
   },
@@ -92,9 +92,9 @@
   },
   {
     "id": 14,
-    "title": "Cay Truc Xinh",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "Cây Trúc Xinh",
+    "artist": "Quan Họ Bắc Ninh",
+    "genre": "QUAN HO",
     "src": "cay_truc_xinh.m4a"
   },
   {
@@ -113,15 +113,15 @@
   },
   {
     "id": 17,
-    "title": "Co Don Tren Sofa",
-    "artist": "VPOP Artist",
+    "title": "Cô Đơn Trên Sofa",
+    "artist": "Hồ Ngọc Hà",
     "genre": "VPOP",
     "src": "co_don_tren_sofa.m4a"
   },
   {
     "id": 18,
     "title": "Co Gai Mua Ha",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "co_gai_mua_ha.m4a"
   },
@@ -135,15 +135,15 @@
   {
     "id": 20,
     "title": "Co Le Nguoi Da Quen Toi",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "co_le_nguoi_da_quen_toi.m4a"
   },
   {
     "id": 21,
-    "title": "Con Duyen",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "Còn Duyên",
+    "artist": "Quan Họ Bắc Ninh",
+    "genre": "QUAN HO",
     "src": "con_duyen.m4a"
   },
   {
@@ -155,15 +155,15 @@
   },
   {
     "id": 23,
-    "title": "Cuoi Nhau Di Yes I Do",
-    "artist": "VPOP Artist",
+    "title": "Cưới Nhau Đi (Yes I Do)",
+    "artist": "Bùi Anh Tuấn & Hiền Hồ",
     "genre": "VPOP",
     "src": "cuoi_nhau_di_yes_i_do.m4a"
   },
   {
     "id": 24,
-    "title": "Da Biet Se Co Ngay Hom Nay",
-    "artist": "VPOP Artist",
+    "title": "Đã Biết Sẽ Có Ngày Hôm Nay",
+    "artist": "Mr. Siro",
     "genre": "VPOP",
     "src": "da_biet_se_co_ngay_hom_nay.m4a"
   },
@@ -184,7 +184,7 @@
   {
     "id": 27,
     "title": "Dem Trang",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "dem_trang.m4a"
   },
@@ -211,21 +211,21 @@
   },
   {
     "id": 31,
-    "title": "Dung Lam Trai Tim Anh Dau",
-    "artist": "VPOP Artist",
+    "title": "Đừng Làm Trái Tim Anh Đau",
+    "artist": "Sơn Tùng M-TP",
     "genre": "VPOP",
     "src": "dung_lam_trai_tim_anh_dau.m4a"
   },
   {
     "id": 32,
-    "title": "Dưới Mưa",
-    "artist": "Mr. Siro",
+    "title": "Duoi Mua",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "duoi_mua.m4a"
   },
   {
     "id": 33,
-    "title": "Dường Như Ta Đã",
+    "title": "Đường Như Ta Đã",
     "artist": "Mỹ Tâm",
     "genre": "VPOP",
     "src": "duong_nhu_ta_da.m4a"
@@ -246,57 +246,57 @@
   },
   {
     "id": 36,
-    "title": "Em Van Tin Vao Tinh Yeu Cua Anh",
-    "artist": "VPOP Artist",
+    "title": "Em Vẫn Tin Vào Tình Yêu Của Anh",
+    "artist": "Lương Bích Hữu",
     "genre": "VPOP",
     "src": "em_van_tin_vao_tinh_yeu_cua_anh.m4a"
   },
   {
     "id": 37,
-    "title": "Em Yêu Anh",
-    "artist": "Lương Bích Hữu",
+    "title": "Em Yeu Anh",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "em_yeu_anh.mp3"
   },
   {
     "id": 38,
     "title": "Fantastic Baby",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "artist": "BIGBANG",
+    "genre": "KPOP",
     "src": "fantastic_baby.m4a"
   },
   {
     "id": 39,
-    "title": "Fxxk It",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "FXXK IT",
+    "artist": "BIGBANG",
+    "genre": "KPOP",
     "src": "fxxk_it.m4a"
   },
   {
     "id": 40,
     "title": "Gap Doi Yeu Thuong",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "gap_doi_yeu_thuong.m4a"
   },
   {
     "id": 41,
     "title": "Gap Lai Nhau Lam Gi",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "gap_lai_nhau_lam_gi.m4a"
   },
   {
     "id": 42,
-    "title": "Gia Ban",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "Giã Bạn",
+    "artist": "Quan Họ Bắc Ninh",
+    "genre": "QUAN HO",
     "src": "gia_ban.m4a"
   },
   {
     "id": 43,
-    "title": "Giay Phut Em Dem",
-    "artist": "VPOP Artist",
+    "title": "Giây Phút Êm Đềm",
+    "artist": "Khởi My",
     "genre": "VPOP",
     "src": "giay_phut_em_dem.m4a"
   },
@@ -324,22 +324,22 @@
   {
     "id": 47,
     "title": "Guong Mat Moi La",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "guong_mat_moi_la.m4a"
   },
   {
     "id": 48,
-    "title": "Gương Mặt Tạ Lỗi",
-    "artist": "Mr. Siro",
+    "title": "Guong Mat Ta Loi",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "guong_mat_ta_loi.m4a"
   },
   {
     "id": 49,
-    "title": "Haruharu",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "Haru Haru",
+    "artist": "BIGBANG",
+    "genre": "KPOP",
     "src": "haruharu.mp3"
   },
   {
@@ -352,7 +352,7 @@
   {
     "id": 51,
     "title": "Hat Mua Vuong Van",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "hat_mua_vuong_van.m4a"
   },
@@ -366,7 +366,7 @@
   {
     "id": 53,
     "title": "Hinh Bong Cua May",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "hinh_bong_cua_may.m4a"
   },
@@ -379,36 +379,36 @@
   },
   {
     "id": 55,
-    "title": "Hoc Cach Di Mot Minh",
-    "artist": "VPOP Artist",
+    "title": "Học Cách Đi Một Mình",
+    "artist": "Lương Bích Hữu",
     "genre": "VPOP",
     "src": "hoc_cach_di_mot_minh.m4a"
   },
   {
     "id": 56,
     "title": "Hon Ha",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "hon_ha.m4a"
   },
   {
     "id": 57,
-    "title": "If You Bigbang",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "IF YOU",
+    "artist": "BIGBANG",
+    "genre": "KPOP",
     "src": "if_you_bigbang.m4a"
   },
   {
     "id": 58,
-    "title": "Khach Den Choi Nha",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "Khách Đến Chơi Nhà",
+    "artist": "Quan Họ Bắc Ninh",
+    "genre": "QUAN HO",
     "src": "khach_den_choi_nha.m4a"
   },
   {
     "id": 59,
-    "title": "Khoc Cung Em",
-    "artist": "VPOP Artist",
+    "title": "Khóc Cùng Em",
+    "artist": "Mr. Siro ft. Gray4",
     "genre": "VPOP",
     "src": "khoc_cung_em.m4a"
   },
@@ -421,8 +421,8 @@
   },
   {
     "id": 61,
-    "title": "Khong The Cung Nhau Suot Kiep",
-    "artist": "VPOP Artist",
+    "title": "Không Thể Cùng Nhau Suốt Kiếp",
+    "artist": "Hòa Minzy",
     "genre": "VPOP",
     "src": "khong_the_cung_nhau_suot_kiep.m4a"
   },
@@ -449,43 +449,43 @@
   },
   {
     "id": 65,
-    "title": "Lets Not Fall In Love",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "Let's Not Fall In Love",
+    "artist": "BIGBANG",
+    "genre": "KPOP",
     "src": "lets_not_fall_in_love.m4a"
   },
   {
     "id": 66,
-    "title": "Lies Bigbang",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "Lies",
+    "artist": "BIGBANG",
+    "genre": "KPOP",
     "src": "lies_bigbang.m4a"
   },
   {
     "id": 67,
     "title": "Loi Khuyen Cho Ban",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "loi_khuyen_cho_ban.m4a"
   },
   {
     "id": 68,
-    "title": "Loser Bigbang",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "LOSER",
+    "artist": "BIGBANG",
+    "genre": "KPOP",
     "src": "loser_bigbang.m4a"
   },
   {
     "id": 69,
-    "title": "Ly Cay Da",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "Lý Cây Đa",
+    "artist": "Quan Họ Bắc Ninh",
+    "genre": "QUAN HO",
     "src": "ly_cay_da.m4a"
   },
   {
     "id": 70,
     "title": "Ma Hong",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "ma_hong.m4a"
   },
@@ -499,14 +499,14 @@
   {
     "id": 72,
     "title": "May Trang",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "may_trang.m4a"
   },
   {
     "id": 73,
     "title": "Minh Tung Ben Nhau",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "minh_tung_ben_nhau.m4a"
   },
@@ -520,14 +520,14 @@
   {
     "id": 75,
     "title": "Muoi Nam Yeu Em",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "muoi_nam_yeu_em.m4a"
   },
   {
     "id": 76,
     "title": "Muoi Nho",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "muoi_nho.m4a"
   },
@@ -540,9 +540,9 @@
   },
   {
     "id": 78,
-    "title": "Ngoi Tua Man Thuyen",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "Ngồi Tựa Mạn Thuyền",
+    "artist": "Quan Họ Bắc Ninh",
+    "genre": "QUAN HO",
     "src": "ngoi_tua_man_thuyen.m4a"
   },
   {
@@ -554,9 +554,9 @@
   },
   {
     "id": 80,
-    "title": "Nguoi Oi Nguoi O Dung Ve",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "Người Ơi Người Ở Đừng Về",
+    "artist": "Quan Họ Bắc Ninh",
+    "genre": "QUAN HO",
     "src": "nguoi_oi_nguoi_o_dung_ve.m4a"
   },
   {
@@ -575,7 +575,7 @@
   },
   {
     "id": 83,
-    "title": "Người Yêu Cũ",
+    "title": "Người Yêu Cũ (Acoustic)",
     "artist": "Khởi My",
     "genre": "VPOP",
     "src": "nguoi_yeu_cu_km.m4a"
@@ -597,21 +597,21 @@
   {
     "id": 86,
     "title": "Nu Cuoi Moi",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "nu_cuoi_moi.m4a"
   },
   {
     "id": 87,
     "title": "Nuoc Mat Hoa Da",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "nuoc_mat_hoa_da.m4a"
   },
   {
     "id": 88,
-    "title": "Quen Cach Yeu",
-    "artist": "VPOP Artist",
+    "title": "Quên Cách Yêu",
+    "artist": "Lương Bích Hữu",
     "genre": "VPOP",
     "src": "quen_cach_yeu.m4a"
   },
@@ -632,7 +632,7 @@
   {
     "id": 91,
     "title": "Tam Mer",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "tam_mer.m4a"
   },
@@ -646,7 +646,7 @@
   {
     "id": 93,
     "title": "Tìm Lại Bầu Trời",
-    "artist": "Mr. Siro",
+    "artist": "Tuấn Hưng",
     "genre": "VPOP",
     "src": "tim_lai_bau_troi.m4a"
   },
@@ -660,7 +660,7 @@
   {
     "id": 95,
     "title": "Tinh Yeu Ban Dau",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "tinh_yeu_ban_dau.m4a"
   },
@@ -688,7 +688,7 @@
   {
     "id": 99,
     "title": "Tran Trong Rb",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "tran_trong_rb.m4a"
   },
@@ -701,29 +701,29 @@
   },
   {
     "id": 101,
-    "title": "Trang Giay Trang",
-    "artist": "VPOP Artist",
+    "title": "Trang Giấy Trắng (Remix)",
+    "artist": "Phạm Trưởng",
     "genre": "VPOP",
     "src": "trang_giay_trang.webm"
   },
   {
     "id": 102,
     "title": "Tu Do Nhu Con Gio",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "tu_do_nhu_con_gio.m4a"
   },
   {
     "id": 103,
     "title": "Tu Do Nhu Con Gio Ban Nam",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "tu_do_nhu_con_gio_ban_nam.m4a"
   },
   {
     "id": 104,
     "title": "Tu Lau Nuoc Mat",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "tu_lau_nuoc_mat.m4a"
   },
@@ -744,7 +744,7 @@
   {
     "id": 107,
     "title": "Vo Hinh Trong Tim Em",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "vo_hinh_trong_tim_em.m4a"
   },
@@ -757,9 +757,9 @@
   },
   {
     "id": 109,
-    "title": "Xe Chi Luon Kim",
-    "artist": "VPOP Artist",
-    "genre": "VPOP",
+    "title": "Xe Chỉ Luồn Kim",
+    "artist": "Quan Họ Bắc Ninh",
+    "genre": "QUAN HO",
     "src": "xe_chi_luon_kim.m4a"
   },
   {
@@ -772,7 +772,7 @@
   {
     "id": 111,
     "title": "Xem Nhu Em Chang May",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "xem_nhu_em_chang_may.m4a"
   },
@@ -786,14 +786,14 @@
   {
     "id": 113,
     "title": "Yeu Lam Chi",
-    "artist": "VPOP Artist",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "yeu_lam_chi.m4a"
   },
   {
     "id": 114,
-    "title": "Yêu Một Người Có Lẽ",
-    "artist": "Mr. Siro",
+    "title": "Yeu Mot Nguoi Co Le",
+    "artist": "Ca Sĩ Khác",
     "genre": "VPOP",
     "src": "yeu_mot_nguoi_co_le.m4a"
   }
