@@ -99,5 +99,13 @@
   { "id": 99, "title": "Dễ Thương", "artist": "Khởi My", "genre": "VPOP", "src": "de_thuong.m4a" },
   { "id": 100, "title": "Xe Đạp Teen", "artist": "Khởi My", "genre": "VPOP", "src": "xe_dap_teen.m4a" },
   { "id": 101, "title": "Tôi Thấy Hoa Vàng Trên Cỏ Xanh", "artist": "Ái Phương", "genre": "VPOP", "src": "toi_thay_hoa_vang_tren_co_xanh.m4a" },
-  { "id": 102, "title": "Có Lúc", "artist": "Ái Phương", "genre": "VPOP", "src": "co_luc.m4a" }
+  { "id": 102, "title": "Có Lúc", "artist": "Ái Phương", "genre": "VPOP", "src": "co_luc.m4a" },
+  { "id": 103, "title": "Trôi Về Đâu", "artist": "Ái Phương", "genre": "VPOP", "src": "troi_ve_dau.m4a" },
+  { "id": 104, "title": "Cô Đơn", "artist": "Ái Phương", "genre": "VPOP", "src": "co_don_ai_phuong.m4a" },
+  { "id": 105, "title": "Đường Lạ Lẫm", "artist": "Ái Phương", "genre": "VPOP", "src": "duong_la_lam.m4a" },
+  { "id": 106, "title": "Đến Với Nhau Trong Cơn Mưa", "artist": "Ái Phương", "genre": "VPOP", "src": "den_voi_nhau_trong_con_mua.m4a" },
+  { "id": 107, "title": "Nếu Anh Yêu Em", "artist": "Ái Phương", "genre": "VPOP", "src": "neu_anh_yeu_em.m4a" },
+  { "id": 108, "title": "Lỗi Tại Mưa", "artist": "Ái Phương", "genre": "VPOP", "src": "loi_tai_mua.m4a" },
+  { "id": 109, "title": "Nhớ Mùa Thu Hà Nội", "artist": "Ái Phương", "genre": "VPOP", "src": "nho_mua_thu_ha_noi.m4a" },
+  { "id": 110, "title": "Xin Lỗi Anh", "artist": "Ái Phương", "genre": "VPOP", "src": "xin_loi_anh_ai_phuong.m4a" }
 ]
