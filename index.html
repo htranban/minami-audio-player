@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MINAMI STEREO & SYSTEM DECK</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background-color: #121216;
+      color: #e2e8f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      margin: 0;
+    }
+    .player-card {
+      background: #1c1c24;
+      border: 1px solid #2d2d3a;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 480px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .header-title {
+      color: #f59e0b;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .screen-box {
+      background: #09090d;
+      border: 1px solid #1e1e2d;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .screen-status {
+      color: #10b981;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .screen-song {
+      color: #38bdf8;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 8px 0;
+    }
+    .controls-row {
+      display: flex !important;
+      justify-content: space-between !important;
+      gap: 10px !important;
+      margin-bottom: 20px !important;
+    }
+    .btn-control {
+      flex: 1;
+      background: #272732;
+      color: #f3f4f6;
+      border: 1px solid #3f3f4e;
+      padding: 12px 0;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn-play {
+      background: #b45309 !important;
+      color: #ffffff !important;
+      border-color: #d97706 !important;
+    }
+    .label-title {
+      color: #f59e0b;
+      font-size: 13px;
+      font-weight: bold;
+      margin: 15px 0 8px 0;
+      display: block;
+    }
+    .artist-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 15px;
+      max-height: 120px;
+      overflow-y: auto;
+    }
+    .artist-btn {
+      background: #272732;
+      color: #f59e0b;
+      border: 1px solid #b45309;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .artist-btn.active {
+      background: #b45309;
+      color: #ffffff;
+    }
+    .song-list {
+      max-height: 280px;
+      overflow-y: auto;
+      background: #121218;
+      border: 1px solid #272732;
+      border-radius: 6px;
+    }
+    .song-item {
+      padding: 10px 12px;
+      border-bottom: 1px solid #1e1e2a;
+      cursor: pointer;
+    }
+    .song-item:hover { background: #252533; }
+    .song-item.active-song { background: #2d2d3f; border-left: 3px solid #f59e0b; }
+    .song-name { font-weight: bold; font-size: 14px; color: #ffffff; }
+    .song-meta { font-size: 12px; color: #9ca3af; }
+  </style>
+</head>
+<body>
+
+<div class="player-card">
+  <div class="header-title">MINAMI STEREO & SYSTEM DECK</div>
+
+  <div class="screen-box">
+    <div class="screen-status" id="playerStatus">READY • 00:00</div>
+    <div id="currentSongTitle" class="screen-song">MINAMI AUDIO</div>
+    <div id="currentArtistTitle" style="color: #6b7280; font-size: 12px;">SELECT TRACK</div>
+  </div>
+
+  <div class="controls-row">
+    <button class="btn-control" onclick="prevTrack()">PREV</button>
+    <button class="btn-control btn-play" onclick="togglePlay()">PLAY / PAUSE</button>
+    <button class="btn-control" onclick="nextTrack()">NEXT</button>
+  </div>
+
+  <span class="label-title">🎤 CA SĨ (ARTIST):</span>
+  <div id="artistContainer" class="artist-list"></div>
+
+  <span class="label-title">🎵 DANH SÁCH BÀI HÁT:</span>
+  <div id="playlist" class="song-list"></div>
+</div>
+
+<audio id="audioPlayer" preload="auto"></audio>
+
+<script>
+  var songs = [];
+  var currentIndex = 0;
+  var currentFilteredList = [];
+  var audio = document.getElementById('audioPlayer');
+
+  window.addEventListener('DOMContentLoaded', function() {
+    fetch('songs.json')
+      .then(response => response.json())
+      .then(data => {
+        songs = data;
+        renderArtists();
+        renderPlaylist(songs);
+      })
+      .catch(err => {
+        console.error('Lỗi nạp songs.json:', err);
+      });
+
+    // Tự động chuyển bài khi kết thúc bài hát (kể cả khi tắt màn hình)
+    audio.addEventListener('ended', function() {
+      nextTrack();
+    });
+
+    // Đăng ký Media Session Handlers cho màn hình khóa
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.setActionHandler('play', () => { audio.play(); });
+      navigator.mediaSession.setActionHandler('pause', () => { audio.pause(); });
+      navigator.mediaSession.setActionHandler('previoustrack', () => { prevTrack(); });
+      navigator.mediaSession.setActionHandler('nexttrack', () => { nextTrack(); });
+    }
+  });
+
+  function updateMediaSession(title, artist) {
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.metadata = new MediaMetadata({
+        title: title,
+        artist: artist,
+        album: 'Minami Audio Deck'
+      });
+    }
+  }
+
+  function renderArtists() {
+    var container = document.getElementById('artistContainer');
+    container.innerHTML = '<button class="artist-btn active" onclick="filterArtist(\'\', this)">TẤT CẢ</button>';
+    var artists = [...new Set(songs.map(s => s.artist || 'Khác').filter(Boolean))].sort();
+    artists.forEach(function(a) {
+      var btn = document.createElement('button');
+      btn.className = 'artist-btn';
+      btn.textContent = a;
+      btn.onclick = function() { filterArtist(a, this); };
+      container.appendChild(btn);
+    });
+  }
+
+  function renderPlaylist(list) {
+    currentFilteredList = list;
+    var pl = document.getElementById('playlist');
+    pl.innerHTML = '';
+    list.forEach(function(s, idx) {
+      var item = document.createElement('div');
+      item.className = 'song-item' + (idx === currentIndex ? ' active-song' : '');
+      var title = s.title || s.src || 'Không tên';
+      var artist = s.artist || 'Chưa rõ';
+      var genre = s.genre || 'Music';
+      
+      item.innerHTML = '<div class="song-name">' + title + '</div>' +
+                       '<div class="song-meta">🎤 ' + artist + ' • ' + genre + '</div>';
+      item.onclick = function() { playTrack(idx); };
+      pl.appendChild(item);
+    });
+  }
+
+  function filterArtist(artist, btn) {
+    document.querySelectorAll('.artist-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    var filtered = artist ? songs.filter(s => s.artist === artist) : songs;
+    renderPlaylist(filtered);
+  }
+
+  function playTrack(idx) {
+    if (idx < 0 || idx >= currentFilteredList.length) return;
+    currentIndex = idx;
+    var s = currentFilteredList[currentIndex];
+    
+    var title = s.title || s.src || 'Không tên';
+    var artist = s.artist || 'Chưa rõ';
+    var fileUrl = s.src;
+
+    document.getElementById('currentSongTitle').textContent = title;
+    document.getElementById('currentArtistTitle').textContent = artist;
+    document.getElementById('playerStatus').textContent = 'PLAYING...';
+    
+    renderPlaylist(currentFilteredList);
+    updateMediaSession(title, artist);
+
+    if (fileUrl) {
+      audio.src = fileUrl;
+      audio.play().catch(e => console.log('Lỗi phát nhạc:', e));
+    }
+  }
+
+  function togglePlay() {
+    if (!audio.src && currentFilteredList.length > 0) {
+      playTrack(0);
+      return;
+    }
+    if (audio.paused) {
+      audio.play();
+      document.getElementById('playerStatus').textContent = 'PLAYING...';
+    } else {
+      audio.pause();
+      document.getElementById('playerStatus').textContent = 'PAUSED';
+    }
+  }
+
+  function prevTrack() {
+    var nextIdx = currentIndex > 0 ? currentIndex - 1 : currentFilteredList.length - 1;
+    playTrack(nextIdx);
+  }
+
+  function nextTrack() {
+    var nextIdx = currentIndex < currentFilteredList.length - 1 ? currentIndex + 1 : 0;
+    playTrack(nextIdx);
+  }
+</script>
+
+</body>
+</html>
