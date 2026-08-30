@@ -3,283 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MINAMI CASSETTE RADIO DECK</title>
+  <title>MINAMI STEREO & SYSTEM DECK</title>
   <style>
     * { box-sizing: border-box; }
     body {
-      background-color: #0d0d11;
+      background-color: #121216;
       color: #e2e8f0;
-      font-family: 'Courier New', Courier, monospace;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
       padding: 20px;
       margin: 0;
     }
-    .cassette-deck {
-      background: linear-gradient(145deg, #23242a, #16171b);
-      border: 4px solid #3b3d45;
-      border-radius: 16px;
+    .player-card {
+      background: #1c1c24;
+      border: 1px solid #2d2d3a;
+      border-radius: 12px;
       width: 100%;
-      max-width: 500px;
-      padding: 24px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.8), inset 0 1px 2px rgba(255,255,255,0.1);
-      position: relative;
+      max-width: 480px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     }
-    .deck-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #33353d;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-    .brand-title {
+    .header-title {
       color: #f59e0b;
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
-    }
-    .radio-badge {
-      background: #dc2626;
-      color: #fff;
-      font-size: 10px;
+      font-size: 18px;
       font-weight: bold;
-      padding: 3px 8px;
-      border-radius: 4px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
       letter-spacing: 1px;
     }
-
-    /* Cassette Tape Window */
-    .tape-window {
-      background: #050507;
-      border: 3px solid #2a2b32;
-      border-radius: 10px;
-      padding: 15px;
-      position: relative;
-      margin-bottom: 20px;
-      box-shadow: inset 0 0 15px rgba(0,0,0,0.9);
-    }
-    .tape-body {
-      background: #1e1f25;
-      border: 2px solid #383a42;
+    .screen-box {
+      background: #09090d;
+      border: 1px solid #1e1e2d;
       border-radius: 8px;
-      height: 140px;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
+      padding: 15px;
+      margin-bottom: 20px;
+      text-align: center;
     }
-    .tape-label {
-      background: #fef08a;
-      color: #111827;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-weight: bold;
+    .screen-status {
+      color: #10b981;
       font-size: 12px;
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 2px solid #eab308;
+      font-weight: bold;
     }
-    .reels-container {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin: 10px 0;
-      position: relative;
+    .screen-song {
+      color: #38bdf8;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 8px 0;
     }
-    .reel {
-      width: 55px;
-      height: 55px;
-      background: radial-gradient(circle, #4b5563 20%, #111827 60%);
-      border: 4px solid #9ca3af;
-      border-radius: 50%;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .controls-row {
+      display: flex !important;
+      justify-content: space-between !important;
+      gap: 10px !important;
+      margin-bottom: 20px !important;
     }
-    .reel-center {
-      width: 16px;
-      height: 16px;
-      background: #1f2937;
-      border-radius: 50%;
-      border: 2px solid #f59e0b;
-      position: relative;
-      z-index: 2;
-    }
-    /* Chấu quay bên trong cuộn băng */
-    .reel-teeth {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-    }
-    .reel-teeth::before, .reel-teeth::after {
-      content: '';
-      position: absolute;
-      background: #9ca3af;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .reel-teeth::before { width: 4px; height: 100%; }
-    .reel-teeth::after { width: 100%; height: 4px; }
-
-    /* Hiệu ứng quay cuộn băng */
-    .spinning .reel-teeth {
-      animation: spinTape 2.5s linear infinite;
-    }
-    @keyframes spinTape {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .tape-center-window {
-      width: 70px;
-      height: 25px;
-      background: #000;
-      border: 1px solid #4b5563;
-      border-radius: 4px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .tape-line {
-      width: 80%;
-      height: 8px;
-      background: #78350f;
-      border-radius: 2px;
-    }
-
-    /* Screen display */
-    .lcd-screen {
-      background: #064e3b;
-      color: #34d399;
-      padding: 10px;
-      border-radius: 6px;
-      border: 2px solid #047857;
-      font-family: monospace;
-      margin-bottom: 20px;
-      text-shadow: 0 0 5px rgba(52, 211, 153, 0.6);
-    }
-    .lcd-status { font-size: 11px; opacity: 0.8; }
-    .lcd-title { font-size: 15px; font-weight: bold; margin: 4px 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-
-    /* Cassette Hardware Buttons */
-    .controls-deck {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-    .btn-cassette {
+    .btn-control {
       flex: 1;
-      background: linear-gradient(180deg, #4b5563, #1f2937);
+      background: #272732;
       color: #f3f4f6;
-      border: 2px solid #374151;
-      border-bottom: 5px solid #111827;
+      border: 1px solid #3f3f4e;
       padding: 12px 0;
       border-radius: 6px;
       font-weight: bold;
-      font-size: 11px;
       cursor: pointer;
-      text-shadow: 0 1px 2px #000;
-      transition: all 0.1s ease;
     }
-    .btn-cassette:active {
-      border-bottom-width: 2px;
-      transform: translateY(3px);
+    .btn-play {
+      background: #b45309 !important;
+      color: #ffffff !important;
+      border-color: #d97706 !important;
     }
-    .btn-play-rec {
-      background: linear-gradient(180deg, #dc2626, #991b1b) !important;
-      border-color: #b91c1c !important;
-      border-bottom-color: #450a0a !important;
+    .label-title {
+      color: #f59e0b;
+      font-size: 13px;
+      font-weight: bold;
+      margin: 15px 0 8px 0;
+      display: block;
     }
-
-    /* Lists */
-    .section-title { color: #f59e0b; font-size: 12px; font-weight: bold; margin: 15px 0 6px 0; }
-    .artist-bar { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 6px; }
-    .artist-chip {
+    .artist-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 15px;
+      max-height: 120px;
+      overflow-y: auto;
+    }
+    .artist-btn {
       background: #272732;
       color: #f59e0b;
       border: 1px solid #b45309;
-      padding: 4px 10px;
+      padding: 6px 12px;
       border-radius: 4px;
-      font-size: 11px;
+      font-size: 12px;
+      font-weight: bold;
       cursor: pointer;
-      white-space: nowrap;
     }
-    .artist-chip.active { background: #b45309; color: #fff; }
-    .playlist-box {
-      max-height: 200px;
+    .artist-btn.active {
+      background: #b45309;
+      color: #ffffff;
+    }
+    .song-list {
+      max-height: 280px;
       overflow-y: auto;
-      background: #09090d;
+      background: #121218;
       border: 1px solid #272732;
       border-radius: 6px;
     }
-    .track-item {
-      padding: 8px 12px;
-      border-bottom: 1px solid #1a1a24;
+    .song-item {
+      padding: 10px 12px;
+      border-bottom: 1px solid #1e1e2a;
       cursor: pointer;
-      font-size: 12px;
     }
-    .track-item:hover { background: #1b1b26; }
-    .track-item.active { background: #2a2a3c; border-left: 3px solid #f59e0b; }
-    .track-name { font-weight: bold; color: #fff; }
-    .track-sub { color: #6b7280; font-size: 10px; }
+    .song-item:hover { background: #252533; }
+    .song-item.active-song { background: #2d2d3f; border-left: 3px solid #f59e0b; }
+    .song-name { font-weight: bold; font-size: 14px; color: #ffffff; }
+    .song-meta { font-size: 12px; color: #9ca3af; }
   </style>
 </head>
 <body>
 
-<div class="cassette-deck">
-  <div class="deck-header">
-    <div class="brand-title">MINAMI STEREO</div>
-    <div class="radio-badge">CASSETTE DECK</div>
+<div class="player-card">
+  <div class="header-title">MINAMI STEREO & SYSTEM DECK</div>
+
+  <div class="screen-box">
+    <div class="screen-status" id="playerStatus">READY • 00:00</div>
+    <div id="currentSongTitle" class="screen-song">MINAMI AUDIO</div>
+    <div id="currentArtistTitle" style="color: #6b7280; font-size: 12px;">SELECT TRACK</div>
   </div>
 
-  <!-- Cassette Tape Display -->
-  <div class="tape-window">
-    <div class="tape-body">
-      <div class="tape-label">
-        <span>MINAMI HIGH-POSITION C-90</span>
-        <span id="tapeSide">SIDE A</span>
-      </div>
-      
-      <div class="reels-container" id="reelsContainer">
-        <div class="reel"><div class="reel-teeth"></div><div class="reel-center"></div></div>
-        <div class="tape-center-window"><div class="tape-line"></div></div>
-        <div class="reel"><div class="reel-teeth"></div><div class="reel-center"></div></div>
-      </div>
-
-      <div style="font-size: 9px; color: #6b7280; text-align: center;">AUTO REVERSE • NOISE REDUCTION</div>
-    </div>
+  <div class="controls-row">
+    <button class="btn-control" onclick="prevTrack()">PREV</button>
+    <button class="btn-control btn-play" onclick="togglePlay()">PLAY / PAUSE</button>
+    <button class="btn-control" onclick="nextTrack()">NEXT</button>
   </div>
 
-  <!-- LCD Screen -->
-  <div class="lcd-screen">
-    <div class="lcd-status" id="lcdStatus">STOPPED • TAPE READY</div>
-    <div class="lcd-title" id="lcdTitle">CHỌN BÀI HÁT ĐỂ PHÁT</div>
-    <div class="lcd-status" id="lcdArtist">ARTIST: UNKNOWN</div>
-  </div>
+  <span class="label-title">🎤 CA SĨ (ARTIST):</span>
+  <div id="artistContainer" class="artist-list"></div>
 
-  <!-- Hardware Buttons -->
-  <div class="controls-deck">
-    <button class="btn-cassette" onclick="prevTrack()">⏮ PREV</button>
-    <button class="btn-cassette btn-play-rec" onclick="togglePlay()">▶ PLAY/PAUSE</button>
-
-    <button class="btn-cassette" onclick="nextTrack()">⏭ NEXT</button>
-  </div>
-
-  <div class="section-title">🎤 CA SĨ:</div>
-  <div id="artistContainer" class="artist-bar"></div>
-
-  <div class="section-title">🎵 DANH SÁCH BÀI HÁT:</div>
-  <div id="playlist" class="playlist-box"></div>
+  <span class="label-title">🎵 DANH SÁCH BÀI HÁT:</span>
+  <div id="playlist" class="song-list"></div>
 </div>
 
 <audio id="audioPlayer" preload="auto"></audio>
@@ -292,55 +153,50 @@
 
   window.addEventListener('DOMContentLoaded', function() {
     fetch('songs.json')
-      .then(res => res.json())
+      .then(response => response.json())
       .then(data => {
         songs = data;
         renderArtists();
         renderPlaylist(songs);
       })
-      .catch(err => console.error('Lỗi nạp songs.json:', err));
+      .catch(err => {
+        console.error('Lỗi nạp songs.json:', err);
+      });
 
+    // Tự động chuyển bài khi kết thúc bài hát (kể cả khi tắt màn hình)
     audio.addEventListener('ended', function() {
       nextTrack();
     });
 
+    // Đăng ký Media Session Handlers cho màn hình khóa
     if ('mediaSession' in navigator) {
-      navigator.mediaSession.setActionHandler('play', () => { audio.play(); setSpinning(true); });
-      navigator.mediaSession.setActionHandler('pause', () => { audio.pause(); setSpinning(false); });
+      navigator.mediaSession.setActionHandler('play', () => { audio.play(); });
+      navigator.mediaSession.setActionHandler('pause', () => { audio.pause(); });
       navigator.mediaSession.setActionHandler('previoustrack', () => { prevTrack(); });
       navigator.mediaSession.setActionHandler('nexttrack', () => { nextTrack(); });
     }
   });
-
-  function setSpinning(isSpinning) {
-    var reels = document.getElementById('reelsContainer');
-    if (isSpinning) {
-      reels.classList.add('spinning');
-    } else {
-      reels.classList.remove('spinning');
-    }
-  }
 
   function updateMediaSession(title, artist) {
     if ('mediaSession' in navigator) {
       navigator.mediaSession.metadata = new MediaMetadata({
         title: title,
         artist: artist,
-        album: 'Minami Cassette Deck'
+        album: 'Minami Audio Deck'
       });
     }
   }
 
   function renderArtists() {
     var container = document.getElementById('artistContainer');
-    container.innerHTML = '<div class="artist-chip active" onclick="filterArtist(\'\', this)">TẤT CẢ</div>';
+    container.innerHTML = '<button class="artist-btn active" onclick="filterArtist(\'\', this)">TẤT CẢ</button>';
     var artists = [...new Set(songs.map(s => s.artist || 'Khác').filter(Boolean))].sort();
     artists.forEach(function(a) {
-      var chip = document.createElement('div');
-      chip.className = 'artist-chip';
-      chip.textContent = a;
-      chip.onclick = function() { filterArtist(a, this); };
-      container.appendChild(chip);
+      var btn = document.createElement('button');
+      btn.className = 'artist-btn';
+      btn.textContent = a;
+      btn.onclick = function() { filterArtist(a, this); };
+      container.appendChild(btn);
     });
   }
 
@@ -350,20 +206,21 @@
     pl.innerHTML = '';
     list.forEach(function(s, idx) {
       var item = document.createElement('div');
-      item.className = 'track-item' + (idx === currentIndex ? ' active' : '');
+      item.className = 'song-item' + (idx === currentIndex ? ' active-song' : '');
       var title = s.title || s.src || 'Không tên';
       var artist = s.artist || 'Chưa rõ';
+      var genre = s.genre || 'Music';
       
-      item.innerHTML = '<div class="track-name">' + (idx + 1) + '. ' + title + '</div>' +
-                       '<div class="track-sub">🎤 ' + artist + '</div>';
+      item.innerHTML = '<div class="song-name">' + title + '</div>' +
+                       '<div class="song-meta">🎤 ' + artist + ' • ' + genre + '</div>';
       item.onclick = function() { playTrack(idx); };
       pl.appendChild(item);
     });
   }
 
-  function filterArtist(artist, el) {
-    document.querySelectorAll('.artist-chip').forEach(c => c.classList.remove('active'));
-    el.classList.add('active');
+  function filterArtist(artist, btn) {
+    document.querySelectorAll('.artist-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
     var filtered = artist ? songs.filter(s => s.artist === artist) : songs;
     renderPlaylist(filtered);
   }
@@ -375,19 +232,18 @@
     
     var title = s.title || s.src || 'Không tên';
     var artist = s.artist || 'Chưa rõ';
+    var fileUrl = s.src;
 
-    document.getElementById('lcdTitle').textContent = title;
-    document.getElementById('lcdArtist').textContent = 'ARTIST: ' + artist;
-    document.getElementById('lcdStatus').textContent = 'PLAYING • CASSETTE TAPE';
+    document.getElementById('currentSongTitle').textContent = title;
+    document.getElementById('currentArtistTitle').textContent = artist;
+    document.getElementById('playerStatus').textContent = 'PLAYING...';
     
     renderPlaylist(currentFilteredList);
     updateMediaSession(title, artist);
 
-    if (s.src) {
-      audio.src = s.src;
-      audio.play().then(() => {
-        setSpinning(true);
-      }).catch(e => console.log('Lỗi phát nhạc:', e));
+    if (fileUrl) {
+      audio.src = fileUrl;
+      audio.play().catch(e => console.log('Lỗi phát nhạc:', e));
     }
   }
 
@@ -398,12 +254,10 @@
     }
     if (audio.paused) {
       audio.play();
-      setSpinning(true);
-      document.getElementById('lcdStatus').textContent = 'PLAYING • CASSETTE TAPE';
+      document.getElementById('playerStatus').textContent = 'PLAYING...';
     } else {
       audio.pause();
-      setSpinning(false);
-      document.getElementById('lcdStatus').textContent = 'PAUSED • TAPE STOPPED';
+      document.getElementById('playerStatus').textContent = 'PAUSED';
     }
   }
 
