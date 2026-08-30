@@ -3,282 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MINAMI CASSETTE RADIO DECK</title>
+  <title>MINAMI KAWAII PLAYER 🐾</title>
   <style>
     * { box-sizing: border-box; }
     body {
-      background-color: #0d0d11;
-      color: #e2e8f0;
-      font-family: 'Courier New', Courier, monospace;
+      background: linear-gradient(135deg, #ffd1dc, #ffe4e1);
+      color: #5c4033;
+      font-family: 'Comic Sans MS', 'Chalkboard SE', 'Curif', cursive, sans-serif;
       display: flex;
       justify-content: center;
       padding: 20px;
       margin: 0;
+      min-height: 100vh;
     }
-    .cassette-deck {
-      background: linear-gradient(145deg, #23242a, #16171b);
-      border: 4px solid #3b3d45;
-      border-radius: 16px;
+    .cute-deck {
+      background: #ffffff;
+      border: 4px solid #ffb6c1;
+      border-radius: 24px;
       width: 100%;
-      max-width: 500px;
+      max-width: 480px;
       padding: 24px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.8), inset 0 1px 2px rgba(255,255,255,0.1);
+      box-shadow: 0 10px 25px rgba(255, 182, 193, 0.5);
       position: relative;
     }
-    .deck-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 2px solid #33353d;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
+    .header {
+      text-align: center;
+      margin-bottom: 15px;
     }
-    .brand-title {
-      color: #f59e0b;
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-shadow: 0 0 8px rgba(245, 158, 11, 0.4);
-    }
-    .radio-badge {
-      background: #dc2626;
-      color: #fff;
-      font-size: 10px;
+    .title {
+      color: #ff69b4;
+      font-size: 22px;
       font-weight: bold;
-      padding: 3px 8px;
-      border-radius: 4px;
-      letter-spacing: 1px;
+      text-shadow: 2px 2px 0px #fff0f5;
     }
 
-    /* Cassette Tape Window */
-    .tape-window {
-      background: #050507;
-      border: 3px solid #2a2b32;
-      border-radius: 10px;
-      padding: 15px;
-      position: relative;
-      margin-bottom: 20px;
-      box-shadow: inset 0 0 15px rgba(0,0,0,0.9);
-    }
-    .tape-body {
-      background: #1e1f25;
-      border: 2px solid #383a42;
-      border-radius: 8px;
-      height: 140px;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      position: relative;
-    }
-    .tape-label {
-      background: #fef08a;
-      color: #111827;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-weight: bold;
-      font-size: 12px;
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 2px solid #eab308;
-    }
-    .reels-container {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+    /* Mascot Cat Animation */
+    .mascot-container {
+      text-align: center;
       margin: 10px 0;
       position: relative;
     }
-    .reel {
-      width: 55px;
-      height: 55px;
-      background: radial-gradient(circle, #4b5563 20%, #111827 60%);
-      border: 4px solid #9ca3af;
-      border-radius: 50%;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .cat-face {
+      font-size: 70px;
+      display: inline-block;
+      transition: transform 0.3s;
+      user-select: none;
     }
-    .reel-center {
-      width: 16px;
-      height: 16px;
-      background: #1f2937;
-      border-radius: 50%;
-      border: 2px solid #f59e0b;
-      position: relative;
-      z-index: 2;
+    .dancing .cat-face {
+      animation: catBounce 0.6s infinite alternate ease-in-out;
     }
-    /* Chấu quay bên trong cuộn băng */
-    .reel-teeth {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-    }
-    .reel-teeth::before, .reel-teeth::after {
-      content: '';
-      position: absolute;
-      background: #9ca3af;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .reel-teeth::before { width: 4px; height: 100%; }
-    .reel-teeth::after { width: 100%; height: 4px; }
-
-    /* Hiệu ứng quay cuộn băng */
-    .spinning .reel-teeth {
-      animation: spinTape 2.5s linear infinite;
-    }
-    @keyframes spinTape {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .tape-center-window {
-      width: 70px;
-      height: 25px;
-      background: #000;
-      border: 1px solid #4b5563;
-      border-radius: 4px;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .tape-line {
-      width: 80%;
-      height: 8px;
-      background: #78350f;
-      border-radius: 2px;
+    @keyframes catBounce {
+      0% { transform: translateY(0) rotate(-5deg) scale(1); }
+      100% { transform: translateY(-12deg) rotate(5deg) scale(1.08); }
     }
 
     /* Screen display */
-    .lcd-screen {
-      background: #064e3b;
-      color: #34d399;
-      padding: 10px;
-      border-radius: 6px;
-      border: 2px solid #047857;
-      font-family: monospace;
+    .screen {
+      background: #fff0f5;
+      border: 2px dashed #ffb6c1;
+      border-radius: 16px;
+      padding: 15px;
+      text-align: center;
       margin-bottom: 20px;
-      text-shadow: 0 0 5px rgba(52, 211, 153, 0.6);
     }
-    .lcd-status { font-size: 11px; opacity: 0.8; }
-    .lcd-title { font-size: 15px; font-weight: bold; margin: 4px 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+    .status { font-size: 12px; color: #ff1493; font-weight: bold; margin-bottom: 5px; }
+    .song-title { font-size: 16px; font-weight: bold; color: #4a4a4a; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+    .song-artist { font-size: 12px; color: #8b6b61; margin-top: 4px; }
 
-    /* Cassette Hardware Buttons */
-    .controls-deck {
+    /* Cute Buttons */
+    .controls {
       display: flex;
-      gap: 8px;
+      justify-content: center;
+      gap: 12px;
       margin-bottom: 20px;
     }
-    .btn-cassette {
-      flex: 1;
-      background: linear-gradient(180deg, #4b5563, #1f2937);
-      color: #f3f4f6;
-      border: 2px solid #374151;
-      border-bottom: 5px solid #111827;
-      padding: 12px 0;
-      border-radius: 6px;
+    .btn-cute {
+      background: #ffb6c1;
+      color: #fff;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 50px;
       font-weight: bold;
-      font-size: 11px;
+      font-size: 14px;
       cursor: pointer;
-      text-shadow: 0 1px 2px #000;
+      box-shadow: 0 4px 0px #ff69b4;
       transition: all 0.1s ease;
     }
-    .btn-cassette:active {
-      border-bottom-width: 2px;
+    .btn-cute:active {
+      box-shadow: 0 1px 0px #ff69b4;
       transform: translateY(3px);
     }
-    .btn-play-rec {
-      background: linear-gradient(180deg, #dc2626, #991b1b) !important;
-      border-color: #b91c1c !important;
-      border-bottom-color: #450a0a !important;
+    .btn-play {
+      background: #ff69b4 !important;
+      box-shadow: 0 4px 0px #c71585 !important;
+      padding: 12px 24px;
+    }
+    .btn-play:active {
+      box-shadow: 0 1px 0px #c71585 !important;
     }
 
     /* Lists */
-    .section-title { color: #f59e0b; font-size: 12px; font-weight: bold; margin: 15px 0 6px 0; }
-    .artist-bar { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 6px; }
+    .section-title { color: #ff69b4; font-size: 13px; font-weight: bold; margin: 15px 0 8px 0; }
+    .artist-bar { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; }
     .artist-chip {
-      background: #272732;
-      color: #f59e0b;
-      border: 1px solid #b45309;
-      padding: 4px 10px;
-      border-radius: 4px;
+      background: #fff0f5;
+      color: #ff69b4;
+      border: 1px solid #ffb6c1;
+      padding: 6px 12px;
+      border-radius: 20px;
       font-size: 11px;
       cursor: pointer;
       white-space: nowrap;
+      font-weight: bold;
     }
-    .artist-chip.active { background: #b45309; color: #fff; }
+    .artist-chip.active { background: #ff69b4; color: #fff; }
     .playlist-box {
-      max-height: 200px;
+      max-height: 180px;
       overflow-y: auto;
-      background: #09090d;
-      border: 1px solid #272732;
-      border-radius: 6px;
+      background: #faf0e6;
+      border: 2px solid #ffe4e1;
+      border-radius: 12px;
     }
     .track-item {
-      padding: 8px 12px;
-      border-bottom: 1px solid #1a1a24;
+      padding: 10px 14px;
+      border-bottom: 1px solid #ffe4e1;
       cursor: pointer;
       font-size: 12px;
+      display: flex;
+      justify-content: space-between;
     }
-    .track-item:hover { background: #1b1b26; }
-    .track-item.active { background: #2a2a3c; border-left: 3px solid #f59e0b; }
-    .track-name { font-weight: bold; color: #fff; }
-    .track-sub { color: #6b7280; font-size: 10px; }
+    .track-item:hover { background: #fff0f5; }
+    .track-item.active { background: #ffe4e1; font-weight: bold; color: #ff1493; }
   </style>
 </head>
 <body>
 
-<div class="cassette-deck">
-  <div class="deck-header">
-    <div class="brand-title">MINAMI STEREO</div>
-    <div class="radio-badge">CASSETTE DECK</div>
+<div class="cute-deck">
+  <div class="header">
+    <div class="title">✨ MINAMI KAWAII ✨</div>
   </div>
 
-  <!-- Cassette Tape Display -->
-  <div class="tape-window">
-    <div class="tape-body">
-      <div class="tape-label">
-        <span>MINAMI HIGH-POSITION C-90</span>
-        <span id="tapeSide">SIDE A</span>
-      </div>
-      
-      <div class="reels-container" id="reelsContainer">
-        <div class="reel"><div class="reel-teeth"></div><div class="reel-center"></div></div>
-        <div class="tape-center-window"><div class="tape-line"></div></div>
-        <div class="reel"><div class="reel-teeth"></div><div class="reel-center"></div></div>
-      </div>
-
-      <div style="font-size: 9px; color: #6b7280; text-align: center;">AUTO REVERSE • NOISE REDUCTION</div>
-    </div>
+  <!-- Cat Animation -->
+  <div class="mascot-container" id="mascot">
+    <div class="cat-face" id="catFace">🐱</div>
   </div>
 
-  <!-- LCD Screen -->
-  <div class="lcd-screen">
-    <div class="lcd-status" id="lcdStatus">STOPPED • TAPE READY</div>
-    <div class="lcd-title" id="lcdTitle">CHỌN BÀI HÁT ĐỂ PHÁT</div>
-    <div class="lcd-status" id="lcdArtist">ARTIST: UNKNOWN</div>
+  <!-- Screen -->
+  <div class="screen">
+    <div class="status" id="status">SẴN SÀNG PHÁT NHẠC 💕</div>
+    <div class="song-title" id="songTitle">CHỌN BÀI HÁT BÊN DƯỚI</div>
+    <div class="song-artist" id="songArtist">🐾 --- 🐾</div>
   </div>
 
-  <!-- Hardware Buttons -->
-  <div class="controls-deck">
-    <button class="btn-cassette" onclick="prevTrack()">⏮ PREV</button>
-    <button class="btn-cassette btn-play-rec" onclick="togglePlay()">▶ PLAY/PAUSE</button>
-
-    <button class="btn-cassette" onclick="nextTrack()">⏭ NEXT</button>
+  <!-- Controls -->
+  <div class="controls">
+    <button class="btn-cute" onclick="prevTrack()">⏮ Trước</button>
+    <button class="btn-cute btn-play" onclick="togglePlay()">▶ Phát / Dừng</button>
+    <button class="btn-cute" onclick="nextTrack()">⏭ Tiếp</button>
   </div>
 
-  <div class="section-title">🎤 CA SĨ:</div>
+  <div class="section-title">🌸 CA SĨ:</div>
   <div id="artistContainer" class="artist-bar"></div>
 
-  <div class="section-title">🎵 DANH SÁCH BÀI HÁT:</div>
+  <div class="section-title">🎶 DANH SÁCH BÀI HÁT:</div>
   <div id="playlist" class="playlist-box"></div>
 </div>
 
@@ -300,24 +187,25 @@
       })
       .catch(err => console.error('Lỗi nạp songs.json:', err));
 
-    audio.addEventListener('ended', function() {
-      nextTrack();
-    });
+    audio.addEventListener('ended', function() { nextTrack(); });
 
     if ('mediaSession' in navigator) {
-      navigator.mediaSession.setActionHandler('play', () => { audio.play(); setSpinning(true); });
-      navigator.mediaSession.setActionHandler('pause', () => { audio.pause(); setSpinning(false); });
+      navigator.mediaSession.setActionHandler('play', () => { audio.play(); setDancing(true); });
+      navigator.mediaSession.setActionHandler('pause', () => { audio.pause(); setDancing(false); });
       navigator.mediaSession.setActionHandler('previoustrack', () => { prevTrack(); });
       navigator.mediaSession.setActionHandler('nexttrack', () => { nextTrack(); });
     }
   });
 
-  function setSpinning(isSpinning) {
-    var reels = document.getElementById('reelsContainer');
-    if (isSpinning) {
-      reels.classList.add('spinning');
+  function setDancing(isDancing) {
+    var mascot = document.getElementById('mascot');
+    var cat = document.getElementById('catFace');
+    if (isDancing) {
+      mascot.classList.add('dancing');
+      cat.textContent = '😸';
     } else {
-      reels.classList.remove('spinning');
+      mascot.classList.remove('dancing');
+      cat.textContent = '🐱';
     }
   }
 
@@ -326,14 +214,14 @@
       navigator.mediaSession.metadata = new MediaMetadata({
         title: title,
         artist: artist,
-        album: 'Minami Cassette Deck'
+        album: 'Minami Kawaii Deck'
       });
     }
   }
 
   function renderArtists() {
     var container = document.getElementById('artistContainer');
-    container.innerHTML = '<div class="artist-chip active" onclick="filterArtist(\'\', this)">TẤT CẢ</div>';
+    container.innerHTML = '<div class="artist-chip active" onclick="filterArtist(\'\', this)">TẤT CẢ ✨</div>';
     var artists = [...new Set(songs.map(s => s.artist || 'Khác').filter(Boolean))].sort();
     artists.forEach(function(a) {
       var chip = document.createElement('div');
@@ -354,8 +242,8 @@
       var title = s.title || s.src || 'Không tên';
       var artist = s.artist || 'Chưa rõ';
       
-      item.innerHTML = '<div class="track-name">' + (idx + 1) + '. ' + title + '</div>' +
-                       '<div class="track-sub">🎤 ' + artist + '</div>';
+      item.innerHTML = '<span>' + (idx + 1) + '. ' + title + '</span>' +
+                       '<span style="font-size: 10px; opacity:0.7;">' + artist + '</span>';
       item.onclick = function() { playTrack(idx); };
       pl.appendChild(item);
     });
@@ -376,9 +264,9 @@
     var title = s.title || s.src || 'Không tên';
     var artist = s.artist || 'Chưa rõ';
 
-    document.getElementById('lcdTitle').textContent = title;
-    document.getElementById('lcdArtist').textContent = 'ARTIST: ' + artist;
-    document.getElementById('lcdStatus').textContent = 'PLAYING • CASSETTE TAPE';
+    document.getElementById('songTitle').textContent = title;
+    document.getElementById('songArtist').textContent = '🎤 ' + artist;
+    document.getElementById('status').textContent = 'ĐANG PHÁT NHẠC CỰC CHILL 🎵';
     
     renderPlaylist(currentFilteredList);
     updateMediaSession(title, artist);
@@ -386,8 +274,8 @@
     if (s.src) {
       audio.src = s.src;
       audio.play().then(() => {
-        setSpinning(true);
-      }).catch(e => console.log('Lỗi phát nhạc:', e));
+        setDancing(true);
+      }).catch(e => console.log('Lỗi:', e));
     }
   }
 
@@ -398,12 +286,12 @@
     }
     if (audio.paused) {
       audio.play();
-      setSpinning(true);
-      document.getElementById('lcdStatus').textContent = 'PLAYING • CASSETTE TAPE';
+      setDancing(true);
+      document.getElementById('status').textContent = 'ĐANG PHÁT NHẠC CỰC CHILL 🎵';
     } else {
       audio.pause();
-      setSpinning(false);
-      document.getElementById('lcdStatus').textContent = 'PAUSED • TAPE STOPPED';
+      setDancing(false);
+      document.getElementById('status').textContent = 'TẠM DỪNG 💤';
     }
   }
 
