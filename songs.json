@@ -1,4 +1,4 @@
-﻿[
+[
   { "id": 1, "title": "Why Did I Fall In Love With You", "artist": "Tohoshinki", "genre": "WORLD", "src": "why_did_i_fall.mp3" },
   { "id": 2, "title": "Take Me To Your Heart", "artist": "MLTR", "genre": "WORLD", "src": "take_me_to_your_heart.mp3" },
   { "id": 3, "title": "E Là Không Thể", "artist": "Anh Quân Idol", "genre": "VPOP", "src": "e_la_khong_the.mp3" },
@@ -61,7 +61,7 @@
   { "id": 61, "title": "Lắng Nghe Nước Mắt", "artist": "Mr. Siro", "genre": "VPOP", "src": "lang_nghe_nuoc_mat.m4a" },
   { "id": 62, "title": "Bức Tranh Từ Nước Mắt", "artist": "Mr. Siro", "genre": "VPOP", "src": "buc_tranh_tu_nuoc_mat.m4a" },
   { "id": 63, "title": "Em Gái Mưa", "artist": "Mr. Siro", "genre": "VPOP", "src": "em_gai_mua.m4a" },
-  { "id": 64, "title": "Trái Tim Em Cũng Biết Đau", "artist": "Mr. Siro", "genre": "VPOP", "src": "trai_tim_em_cung_biet_dau.m4a" },
+  { "id": 64, "title": "Trái Tim Em Cùng Biết Đau", "artist": "Mr. Siro", "genre": "VPOP", "src": "trai_tim_em_cung_biet_dau.m4a" },
   { "id": 65, "title": "Chạm Đáy Nỗi Đau", "artist": "Mr. Siro", "genre": "VPOP", "src": "cham_day_noi_dau.m4a" },
   { "id": 66, "title": "Một Bước Yêu Vạn Dặm Đau", "artist": "Mr. Siro", "genre": "VPOP", "src": "mot_buoc_yeu_van_dam_dau.m4a" },
   { "id": 67, "title": "Đừng Ai Nhắc Về Anh Ấy", "artist": "Mr. Siro", "genre": "VPOP", "src": "dung_ai_nhac_ve_anh_ay.m4a" },
@@ -97,5 +97,15 @@
   { "id": 97, "title": "Nếu Nhớ Năm Xưa", "artist": "Khởi My", "genre": "VPOP", "src": "neu_nho_nam_xua.m4a" },
   { "id": 98, "title": "Người Yêu Cũ", "artist": "Khởi My", "genre": "VPOP", "src": "nguoi_yeu_cu_km.m4a" },
   { "id": 99, "title": "Dễ Thương", "artist": "Khởi My", "genre": "VPOP", "src": "de_thuong.m4a" },
-  { "id": 100, "title": "Xe Đạp Teen", "artist": "Khởi My", "genre": "VPOP", "src": "xe_dap_teen.m4a" }
+  { "id": 100, "title": "Xe Đạp Teen", "artist": "Khởi My", "genre": "VPOP", "src": "xe_dap_teen.m4a" },
+  { "id": 101, "title": "Tôi Thấy Hoa Vàng Trên Cỏ Xanh", "artist": "Ái Phương", "genre": "VPOP", "src": "toi_thay_hoa_vang_tren_co_xanh.m4a" },
+  { "id": 102, "title": "Có Lúc", "artist": "Ái Phương", "genre": "VPOP", "src": "co_luc.m4a" },
+  { "id": 103, "title": "Trôi Về Đâu", "artist": "Ái Phương", "genre": "VPOP", "src": "troi_ve_dau.m4a" },
+  { "id": 104, "title": "Cô Đơn", "artist": "Ái Phương", "genre": "VPOP", "src": "co_don_ai_phuong.m4a" },
+  { "id": 105, "title": "Đường Lạ Lẫm", "artist": "Ái Phương", "genre": "VPOP", "src": "duong_la_lam.m4a" },
+  { "id": 106, "title": "Đến Với Nhau Trong Cơn Mưa", "artist": "Ái Phương", "genre": "VPOP", "src": "den_voi_nhau_trong_con_mua.m4a" },
+  { "id": 107, "title": "Nếu Anh Yêu Em", "artist": "Ái Phương", "genre": "VPOP", "src": "neu_anh_yeu_em.m4a" },
+  { "id": 108, "title": "Lỗi Tại Mưa", "artist": "Ái Phương", "genre": "VPOP", "src": "loi_tai_mua.m4a" },
+  { "id": 109, "title": "Nhớ Mùa Thu Hà Nội", "artist": "Ái Phương", "genre": "VPOP", "src": "nho_mua_thu_ha_noi.m4a" },
+  { "id": 110, "title": "Xin Lỗi Anh", "artist": "Ái Phương", "genre": "VPOP", "src": "xin_loi_anh_ai_phuong.m4a" }
 ]
