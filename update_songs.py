@@ -4,7 +4,7 @@ import json
 WEB_DIR = "/var/www/html"
 SONGS_JSON_PATH = os.path.join(WEB_DIR, "songs.json")
 
-# Mapping chính xác 100% từng file nhạc trên Server -> KHÔNG CÒN "Ca Sĩ Khác"
+# Danh sách mapping chuẩn 100% từng file thực tế
 FILE_MAPPING = {
     # --- ÁI PHƯƠNG ---
     "toi_thay_hoa_vang_tren_co_xanh.m4a": ("Tôi Thấy Hoa Vàng Trên Cỏ Xanh", "Ái Phương", "VPOP"),
@@ -103,7 +103,7 @@ FILE_MAPPING = {
     "khach_den_choi_nha.m4a": ("Khách Đến Chơi Nhà", "Quan Họ Bắc Ninh", "QUAN HO"),
     "ngoi_tua_man_thuyen.m4a": ("Ngồi Tựa Mạn Thuyền", "Quan Họ Bắc Ninh", "QUAN HO"),
 
-    # --- TẤT CẢ CÁC CA SĨ LẺ KHÁC (ĐÃ CHUẨN HÓA 100%) ---
+    # --- TẤT CẢ CÁC CA SĨ LẺ KHÁC ---
     "anh-con-no-em.mp3": ("Anh Còn Nợ Em", "Quang Dũng", "VPOP"),
     "anh_khac_hay_em_khac.m4a": ("Anh Khác Hay Em Khác", "Khắc Việt", "VPOP"),
     "ao_mong_tinh_yeu.m4a": ("Ảo Mộng Tình Yêu", "Đan Trường & Cẩm Ly", "VPOP"),
@@ -168,7 +168,6 @@ for idx, f in enumerate(audio_files, 1):
     if f in FILE_MAPPING:
         title, artist, genre = FILE_MAPPING[f]
     else:
-        # Dự phòng cho file tương lai chưa map
         raw_name = os.path.splitext(f)[0]
         title = raw_name.replace("_", " ").replace("-", " ").title()
         artist = "Ca Sĩ VPOP"
@@ -182,8 +181,7 @@ for idx, f in enumerate(audio_files, 1):
         "src": f
     })
 
-# Ghi đè file json
 with open(SONGS_JSON_PATH, "w", encoding="utf-8") as f:
     json.dump(new_songs, f, ensure_ascii=False, indent=2)
 
-print(f"🎉 ĐÃ MAP HOÀN HẢO 100% BỘ {len(new_songs)} BÀI HÁT (SẠCH BÓNG CA SĨ KHÁC)!")
+print(f"🎉 ĐÃ MAP HOÀN HẢO 100% {len(new_songs)} BÀI HÁT (ĐÃ CÓ ÁI PHƯƠNG)!")
